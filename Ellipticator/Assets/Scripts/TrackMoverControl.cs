@@ -9,6 +9,9 @@ namespace Tracks
 {
     public class TrackMoverControl : MonoBehaviour
     {
+
+        public float globalSpeed;
+
         [SerializeField] private List<GameObject> _availableTracks = new List<GameObject>();
 
         int newTrack;
@@ -25,26 +28,11 @@ namespace Tracks
 
         public void PickNextTrack()
         {
-          //   newTrack = (newTrack + UnityEngine.Random.Range(1, _availableTracks.Count - 1)) % _availableTracks.Count;
-          //  _availableTracks[newTrack].SetActive(true);
+            newTrack = (newTrack + UnityEngine.Random.Range(1, _availableTracks.Count - 1)) % _availableTracks.Count;
+            _availableTracks[newTrack].SetActive(true);
      
         }
 
-        public void NextTrack(WitResponseNode commandResult)
-        {
-            string[] directions = commandResult.GetAllEntityValues("direction:direction");
-        //    NextTrack(directions);
-        }
-      
-
-        public void RightTurn()
-        {
-            Debug.Log("Right");
-        }
-        public void LeftTurn()
-        {
-            Debug.Log("Left");
-        }
         //this gets the information from wit and passes it in
         public void NextTrack(string direction)
         {

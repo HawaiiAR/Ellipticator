@@ -7,7 +7,6 @@ namespace Tracks
     {
         public bool isVertical;
 
-
         [SerializeField] private GameObject _rotateControl;
         [SerializeField] private float _angle;
         [SerializeField] private string _direction;
@@ -36,14 +35,16 @@ namespace Tracks
             }
             if (canRotate)
             {
+                _speed = _paceSetter.globalSpeed;
+
                 if (isVertical)
                 {
-                    _rotateControl.transform.Rotate( -speed * 10 * Time.deltaTime, 0, 0);
+                    _rotateControl.transform.Rotate( -_speed * 10 * Time.deltaTime, 0, 0);
                     endRot = _rotateControl.transform.localEulerAngles.x;
                 }
                 if (!isVertical)
                 {
-                    _rotateControl.transform.Rotate(0, 0, -speed * 10 * Time.deltaTime);
+                    _rotateControl.transform.Rotate(0, 0, -_speed * 15 * Time.deltaTime);
                     endRot = _rotateControl.transform.localEulerAngles.z;
                 }
               

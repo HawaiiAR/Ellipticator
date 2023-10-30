@@ -8,16 +8,21 @@ namespace Tracks
     {
 
       
-        public float speed;
+      
+
+        [SerializeField] protected PaceSetter _paceSetter;
 
         [SerializeField] protected Transform _startPoint;
         [SerializeField] protected TrackMoverControl _moveControl;
+
+        protected float _speed;
      
 
         protected bool canMove;
         // Start is called before the first frame update
         protected virtual void Start()
         {
+            _paceSetter = FindObjectOfType<PaceSetter>();
             this.transform.position = _startPoint.transform.position;
         }
 
@@ -33,7 +38,8 @@ namespace Tracks
         {
             if (canMove)
             {
-                transform.Translate(0, speed * Time.deltaTime, 0);
+                _speed = _paceSetter.globalSpeed;
+                transform.Translate(0, _speed * Time.deltaTime, 0);
             }
         }
 
