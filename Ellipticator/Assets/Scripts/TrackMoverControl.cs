@@ -13,15 +13,22 @@ namespace Tracks
         public float globalSpeed;
 
         [SerializeField] private List<GameObject> _availableTracks = new List<GameObject>();
+        [SerializeField] private GameObject[] _arrowImages;
 
         int newTrack;
+
+        bool rightTurn;
+        bool leftTurn;
+        bool upTurn;
+        bool downTurn;
+
 
         // Start is called before the first frame update
         void Start()
         {
             SetTracksState(false);
             _availableTracks[0].SetActive(true);
-          
+            ActivateArrowImages(false);
         }
 
      
@@ -30,7 +37,41 @@ namespace Tracks
         {
             newTrack = (newTrack + UnityEngine.Random.Range(1, _availableTracks.Count - 1)) % _availableTracks.Count;
             _availableTracks[newTrack].SetActive(true);
-     
+            int arrowNum = newTrack;
+            SetArrow(arrowNum);
+
+
+        }
+
+        private void SetArrow(int arrowNum)
+        {
+            ActivateArrowImages(false);
+
+            switch (arrowNum)
+            {
+                case 0:
+                    ActivateArrowImages(false);
+                    break;
+                case 1:
+                    ActivateArrowImages(false);
+                    break;
+                case 2:
+                    _arrowImages[0].SetActive(true);
+                    rightTurn = true;
+                    break;
+                case 3:
+                    _arrowImages[1].SetActive(true);
+                    leftTurn = true;
+                    break;
+                case 4:
+                    _arrowImages[2].SetActive(true);
+                    upTurn = true;
+                    break;
+                case 5:
+                    _arrowImages[3].SetActive(true);
+                    downTurn = true;
+                    break;
+            }
         }
 
         //this gets the information from wit and passes it in
@@ -62,6 +103,14 @@ namespace Tracks
             }
         }
     
+
+        private void ActivateArrowImages(bool state)
+        {
+            foreach(GameObject a in _arrowImages)
+            {
+                a.SetActive(state);
+            }
+        }
 
     private void SetTracksState(bool state)
         {
