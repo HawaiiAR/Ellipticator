@@ -1,21 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
+using Meta.WitAi;
+using Meta.WitAi.Json;
 
 namespace Tracks
 {
     public class TrackMoverControl : MonoBehaviour
     {
-
-      //  [SerializeField] private GameObject[] _streightTracks;
-      //  [SerializeField] private GameObject[] _curveTracks;
-
         [SerializeField] private List<GameObject> _availableTracks = new List<GameObject>();
-       
 
         int newTrack;
-      
-
 
         // Start is called before the first frame update
         void Start()
@@ -25,41 +21,58 @@ namespace Tracks
           
         }
 
-        // Update is called once per frame
-        void Update()
-        {
-
-        }
+     
 
         public void PickNextTrack()
         {
-             newTrack = (newTrack + Random.Range(1, _availableTracks.Count - 1)) % _availableTracks.Count;
-            _availableTracks[newTrack].SetActive(true);
+          //   newTrack = (newTrack + UnityEngine.Random.Range(1, _availableTracks.Count - 1)) % _availableTracks.Count;
+          //  _availableTracks[newTrack].SetActive(true);
      
         }
 
-
-        /* private void NextTrack(int track)
+        public void NextTrack(WitResponseNode commandResult)
         {
-           switch (track)
+            string[] directions = commandResult.GetAllEntityValues("direction:direction");
+        //    NextTrack(directions);
+        }
+      
+
+        public void RightTurn()
+        {
+            Debug.Log("Right");
+        }
+        public void LeftTurn()
+        {
+            Debug.Log("Left");
+        }
+        //this gets the information from wit and passes it in
+        public void NextTrack(string direction)
+        {
+            switch (direction)
             {
-                case 0:
-                    _streightTracks[0].SetActive(true);
-                   
-                    Debug.Log(trackNum);
+                case "streight":
+                    _availableTracks[0].SetActive(true);
+                    Debug.Log("go streight");
                     break;
-                case 1:
-                    _streightTracks[1].SetActive(true);
-                   
-                    Debug.Log(trackNum);
+
+                case "right":
+                    _availableTracks[2].SetActive(true);
+                    Debug.Log("go righy");
                     break;
-                case 2:
-                    _curveTracks[0].SetActive(true);
+                case "left":
+                    _availableTracks[3].SetActive(true);
+                    Debug.Log("go left");
                     break;
-                case 3:
-                    _curveTracks[1].SetActive(true);
+                case "up":
+                    _availableTracks[4].SetActive(true);
+                    Debug.Log("go up");
                     break;
-            }*/
+                case "down":
+                    _availableTracks[5].SetActive(true);
+                    Debug.Log("go down");
+                    break;
+            }
+        }
     
 
     private void SetTracksState(bool state)

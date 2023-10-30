@@ -1,0 +1,312 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae5a46bda3295124c99b0e6537ac7252, type: 3}
+  m_Name: VoiceControl
+  m_EditorClassIdentifier: 
+  _clientAccessToken: L2ZF5ENOC55EQ6AKKKWCSJ37JAY6GYPW
+  _appInfo:
+    name: ellipticator_prototype
+    id: 925682582601089
+    lang: en
+    isPrivate: 1
+    createdAt: 2023-10-29T09:53:27-0700
+    trainingStatus: 1
+    lastTrainDuration: 73
+    lastTrainedAt: 2023-10-30T13:26:14-0700
+    nextTrainAt: 2023-10-30T13:25:01-0700
+    intents:
+    - id: 1282606059070759
+      name: Go_Down
+      entities:
+      - name: Go_Down:Go_Down
+        id: 2545928545580945
+    - id: 1092463655260820
+      name: Go_Left
+      entities:
+      - name: Go_Left:Go_Left
+        id: 711042757209153
+    - id: 6886481081429277
+      name: Go_Right
+      entities:
+      - name: Go_Right:Go_Right
+        id: 384312500585293
+    - id: 3615753838693267
+      name: Go_Up
+      entities:
+      - name: Go_Up:Go_Up
+        id: 870143044492680
+    entities:
+    - name: Go_Down
+      id: 261100623596104
+      lookups:
+      - free-text
+      - keywords
+      roles:
+      - name: Go_Down
+        id: 2545928545580945
+      keywords:
+      - keyword: Down
+        synonyms:
+        - down
+    - name: Go_Left
+      id: 1380391089575491
+      lookups:
+      - free-text
+      - keywords
+      roles:
+      - name: Go_Left
+        id: 711042757209153
+      keywords:
+      - keyword: Left
+        synonyms:
+        - left
+    - name: Go_Right
+      id: 246786928373733
+      lookups:
+      - free-text
+      - keywords
+      roles:
+      - name: Go_Right
+        id: 384312500585293
+      keywords:
+      - keyword: right
+        synonyms:
+        - right
+    - name: Go_Up
+      id: 6744939065594168
+      lookups:
+      - free-text
+      - keywords
+      roles:
+      - name: Go_Up
+        id: 870143044492680
+      keywords:
+      - keyword: up
+        synonyms:
+        - up
+    traits: []
+    versionTags: []
+    voices:
+    - name: British Butler
+      locale: en_GB
+      gender: male
+      styles:
+      - default
+      - soft
+      - formal
+      - fast
+      - projected
+    - name: Pirate
+      locale: en_GB
+      gender: male
+      styles:
+      - default
+      - soft
+      - formal
+      - fast
+      - projected
+    - name: Cael
+      locale: en_US
+      gender: male
+      styles:
+      - default
+      - soft
+      - formal
+      - fast
+      - projected
+    - name: Cam
+      locale: en_US
+      gender: male
+      styles:
+      - default
+      - soft
+      - formal
+      - fast
+      - projected
+    - name: Carl
+      locale: en_US
+      gender: male
+      styles:
+      - default
+      - soft
+      - formal
+      - fast
+      - projected
+    - name: Cartoon Baby
+      locale: en_US
+      gender: nonbinary
+      styles:
+      - default
+      - soft
+      - formal
+      - fast
+      - projected
+    - name: Charlie
+      locale: en_US
+      gender: male
+      styles:
+      - default
+      - soft
+      - fast
+      - projected
+    - name: Cody
+      locale: en_US
+      gender: male
+      styles:
+      - default
+      - soft
+      - formal
+      - fast
+      - projected
+    - name: Connor
+      locale: en_US
+      gender: male
+      styles:
+      - default
+      - soft
+      - formal
+      - fast
+      - projected
+    - name: Cooper
+      locale: en_US
+      gender: male
+      styles:
+      - default
+      - soft
+      - formal
+      - fast
+      - projected
+    - name: Disaffected
+      locale: en_US
+      gender: female
+      styles:
+      - default
+      - soft
+      - formal
+      - fast
+      - projected
+    - name: Hollywood
+      locale: en_US
+      gender: female
+      styles:
+      - default
+      - soft
+      - formal
+      - fast
+      - projected
+    - name: Overconfident
+      locale: en_US
+      gender: male
+      styles:
+      - default
+      - soft
+      - formal
+      - fast
+      - projected
+    - name: Prospector
+      locale: en_US
+      gender: male
+      styles:
+      - default
+    - name: Railey
+      locale: en_US
+      gender: female
+      styles:
+      - default
+      - soft
+      - formal
+      - fast
+      - projected
+    - name: Rebecca
+      locale: en_US
+      gender: female
+      styles:
+      - default
+      - soft
+      - formal
+      - fast
+      - projected
+    - name: Remi
+      locale: en_US
+      gender: female
+      styles:
+      - default
+      - soft
+      - formal
+      - fast
+      - projected
+    - name: Rubie
+      locale: en_US
+      gender: female
+      styles:
+      - default
+      - soft
+      - formal
+      - fast
+      - projected
+    - name: Trendy
+      locale: en_US
+      gender: female
+      styles:
+      - default
+      - soft
+      - formal
+      - fast
+      - projected
+    - name: Vampire
+      locale: en_US
+      gender: male
+      styles:
+      - default
+      - soft
+      - formal
+      - fast
+      - projected
+    - name: Colin
+      locale: en_CA
+      gender: male
+      styles:
+      - default
+      - soft
+      - formal
+      - fast
+      - projected
+    - name: Rosie
+      locale: en_CA
+      gender: female
+      styles:
+      - default
+      - soft
+      - formal
+      - fast
+      - projected
+  _configData: []
+  _configurationId: a739b58e-2cf3-4b01-90ae-9afac1463789
+  timeoutMS: 10000
+  endpointConfiguration:
+    _uriScheme: 
+    _authority: 
+    _port: 0
+    _witApiVersion: 
+    _message: 
+    _speech: 
+    _dictation: 
+    _synthesize: 
+    _event: 
+    _converse: 
+  isDemoOnly: 0
+  useConduit: 1
+  _manifestLocalPath: ConduitManifest-6042a2ac-e5c5-40f9-9d96-97bea4f9c4a3.json
+  excludedAssemblies:
+  - Oculus.Voice.Demo, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  - Meta.WitAi.Samples, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  relaxedResolution: 0

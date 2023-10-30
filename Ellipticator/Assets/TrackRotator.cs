@@ -47,7 +47,7 @@ namespace Tracks
                     endRot = _rotateControl.transform.localEulerAngles.z;
                 }
               
-                Debug.Log(endRot);
+              //  Debug.Log(endRot);
               
                 if(endRot <= _angle)
                 {
