@@ -10,6 +10,18 @@ namespace Tracks
     public class TrackMoverControl : MonoBehaviour
     {
 
+        public delegate void TurnRightGateOff(string direction);
+        public static event TurnRightGateOff RightGateOff;
+
+        public delegate void TurnLeftGateOff(string direction);
+        public static event TurnLeftGateOff LeftGateOff;
+
+        public delegate void TurnUpGateOff(string direction);
+        public static event TurnUpGateOff UpGateOff;
+
+        public delegate void TrunDownGateOff(string direction);
+        public static event TrunDownGateOff DownGateOff;
+
         public float globalSpeed;
 
         [SerializeField] private List<GameObject> _availableTracks = new List<GameObject>();
@@ -30,8 +42,6 @@ namespace Tracks
             _availableTracks[0].SetActive(true);
             ActivateArrowImages(false);
         }
-
-     
 
         public void PickNextTrack()
         {
@@ -80,24 +90,32 @@ namespace Tracks
             switch (direction)
             {
                 case "streight":
-                    _availableTracks[0].SetActive(true);
+                //    _availableTracks[0].SetActive(true);
                     Debug.Log("go streight");
                     break;
 
                 case "right":
-                    _availableTracks[2].SetActive(true);
-                    Debug.Log("go righy");
+                    //     _availableTracks[2].SetActive(true);
+                    RightGateOff("right");
+                    _arrowImages[0].SetActive(false);
+                    Debug.Log("go right");
                     break;
                 case "left":
-                    _availableTracks[3].SetActive(true);
+                    //     _availableTracks[3].SetActive(true);
+                    LeftGateOff("left");
+                    _arrowImages[1].SetActive(false);
                     Debug.Log("go left");
                     break;
                 case "up":
-                    _availableTracks[4].SetActive(true);
+                    //   _availableTracks[4].SetActive(true);
+                    UpGateOff("up");
+                    _arrowImages[2].SetActive(false);
                     Debug.Log("go up");
                     break;
                 case "down":
-                    _availableTracks[5].SetActive(true);
+                    //   _availableTracks[5].SetActive(true);
+                    DownGateOff("down");
+                    _arrowImages[3].SetActive(false);
                     Debug.Log("go down");
                     break;
             }

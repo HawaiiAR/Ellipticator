@@ -80,8 +80,9 @@ namespace Oculus.VoiceSDK.UX
         }
 
         // On click, activate if not active & deactivate if active
-        private void OnClick()
+        public void OnClick()
         {
+            Debug.Log("button activated");
             if (!_isActive)
             {
                 Activate();
@@ -93,7 +94,7 @@ namespace Oculus.VoiceSDK.UX
         }
 
         // Activate depending on settings
-        private void Activate()
+        public void Activate()
         {
             if (!_activateImmediately)
             {
@@ -103,11 +104,13 @@ namespace Oculus.VoiceSDK.UX
             {
                 _request = _voiceService.ActivateImmediately(GetRequestEvents());
             }
+            Invoke(nameof(Deactivate), 5);
         }
 
         // Deactivate depending on settings
         private void Deactivate()
         {
+            Debug.Log("voice activator deactivated");
             if (!_deactivateAndAbort)
             {
                 _request.DeactivateAudio();

@@ -13,8 +13,7 @@ namespace Tracks
 
         void Update()
         {
-            StartCoroutine(CalculateSpeed());
-              
+            StartCoroutine(CalculateSpeed());        
         }
 
         IEnumerator CalculateSpeed()
