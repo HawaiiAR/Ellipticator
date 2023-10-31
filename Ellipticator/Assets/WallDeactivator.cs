@@ -7,18 +7,14 @@ namespace Tracks
 {
     public class WallDeactivator : MonoBehaviour
     {
-
         public bool isRightGate;
         public bool isLeftGate;
         public bool isUpGate;
         public bool isDownGate;
 
         [SerializeField] private GameObject _gate;
-     
-      
 
-
-        void Start()
+        void OnEnable()
         {
             TrackMoverControl.RightGateOff += TurnGateOff;
             TrackMoverControl.LeftGateOff += TurnGateOff;

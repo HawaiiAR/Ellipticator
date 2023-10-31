@@ -32,7 +32,7 @@ namespace Oculus.VoiceSDK.UX
         private Button _button;
         // The button label to be adjusted with state
         private Text _buttonLabel;
-
+      
         [Tooltip("Reference to the current voice service")]
         [SerializeField] private VoiceService _voiceService;
 
