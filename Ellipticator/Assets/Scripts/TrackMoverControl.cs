@@ -34,17 +34,21 @@ namespace Tracks
         bool upTurn;
         bool downTurn;
 
-
-        // Start is called before the first frame update
-        void Start()
+        private void Awake()
         {
             SetTracksState(false);
             _availableTracks[0].SetActive(true);
             ActivateArrowImages(false);
         }
+        // Start is called before the first frame update
+        void Start()
+        {
+           
+        }
 
         public void PickNextTrack()
         {
+            Debug.Log("TrackPicked");
             newTrack = (newTrack + UnityEngine.Random.Range(1, _availableTracks.Count - 1)) % _availableTracks.Count;
             _availableTracks[newTrack].SetActive(true);
             int arrowNum = newTrack;

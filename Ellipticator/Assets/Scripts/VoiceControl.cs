@@ -56,7 +56,7 @@ public class VoiceControl : MonoBehaviour
         Debug.Log("voice activator deactivated");
         if (!_deactivateAndAbort)
         {
-            _request.DeactivateAudio();
+          //  _request.DeactivateAudio();
         }
         else
         {

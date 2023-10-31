@@ -9,6 +9,9 @@ TagManager:
   - MidPoint
   - TrackEnd
   - Wall
+  - SpawnPoint
+  - Mine
+  - SamplesInfoPanel
   layers:
   - Default
   - TransparentFX
@@ -16,8 +19,8 @@ TagManager:
   - Hide
   - Water
   - UI
-  - 
-  - 
+  - Mines
+  - Player
   - 
   - 
   - 

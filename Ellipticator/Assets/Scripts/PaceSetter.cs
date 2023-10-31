@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,10 +11,31 @@ namespace Tracks
         public float globalSpeed;
         [SerializeField] private float _speedMultiplier;
 
+        bool gameStarted;
+
+        private void Start()
+        {
+            GameControl.GameStarted += StartTrackingMovement;
+            gameStarted = false;
+            globalSpeed = 0;
+        }
+
+        private void OnDisable()
+        {
+            GameControl.GameStarted -= StartTrackingMovement;
+        }
+
+        private void StartTrackingMovement()
+        {
+            gameStarted = true;
+        }
 
         void Update()
         {
-            StartCoroutine(CalculateSpeed());        
+            if (gameStarted)
+            {
+                StartCoroutine(CalculateSpeed());
+            }
         }
 
         IEnumerator CalculateSpeed()
