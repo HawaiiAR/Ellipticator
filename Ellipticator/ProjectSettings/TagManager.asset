@@ -4,27 +4,26 @@
 TagManager:
   serializedVersion: 2
   tags:
+  - SpawnPoint
+  - Wall
   - TrackPiece
   - EndPoint
   - MidPoint
-  - TrackEnd
-  - Wall
-  - SpawnPoint
-  - Mine
   - SamplesInfoPanel
+  - Mine
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Hide
+  - 
   - Water
   - UI
   - Mines
   - Player
   - 
-  - 
-  - 
-  - 
+  - HiddenMesh
+  - Character
+  - MirroredCharacter
   - 
   - 
   - 
