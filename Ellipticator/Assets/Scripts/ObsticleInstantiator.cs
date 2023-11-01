@@ -36,7 +36,7 @@ namespace Tracks {
                 int index = UnityEngine.Random.Range(0, _spawnPoints.Count);
                 _objectsToSpawn.Add(points[index]);
             }
-            Debug.Log("feeding fish");
+         
             return _objectsToSpawn;
         }
 

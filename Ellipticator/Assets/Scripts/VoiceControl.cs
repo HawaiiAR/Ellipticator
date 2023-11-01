@@ -71,6 +71,7 @@ public class VoiceControl : MonoBehaviour
         events.OnComplete.AddListener(OnComplete);
         return events;
     }
+
     // Request initialized
     private void OnInit(VoiceServiceRequest request)
     {
