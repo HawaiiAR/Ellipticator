@@ -28,7 +28,7 @@ namespace Tracks
         private void StartTrackingMovement()
         {
             gameStarted = true;
-           // globalSpeed = .01f;
+            globalSpeed = .01f;
         }
 
         void Update()
